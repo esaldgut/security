@@ -10,6 +10,7 @@ import (
 func ExecCommand(cmd string) (command *exec.Cmd) {
 	cmdAttr := strings.Split(cmd, " ")
 	if len(cmdAttr) > 1 {
+		log.Print(cmdAttr[0], cmdAttr[1])
 		command = exec.Command(cmdAttr[0], cmdAttr[1])
 	} else {
 		command = exec.Command(cmd)
